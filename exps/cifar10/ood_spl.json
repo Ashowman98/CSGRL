@@ -1,0 +1,30 @@
+{
+    "name" : "cifar10",
+    "train" : [
+        {"dataset":"cifar10","convert_class":[0,1,2,3,4,5,6,7,8,9],"keep_class":[0,1,2,3,4,5,6,7,8,9]}
+    ],
+    "test_imgnc" : [
+        {"dataset":"cifar10","convert_class":[0,1,2,3,4,5,6,7,8,9],"keep_class":[0,1,2,3,4,5,6,7,8,9]},
+        {"dataset":"imagenet_crop","convert_class":[-1],"keep_class":[-1]}
+    ],
+    "test_imgnr" : [
+        {"dataset":"cifar10","convert_class":[0,1,2,3,4,5,6,7,8,9],"keep_class":[0,1,2,3,4,5,6,7,8,9]},
+        {"dataset":"imagenet_resize","convert_class":[-1],"keep_class":[-1]}
+    ],
+    "test_lsunc" : [
+        {"dataset":"cifar10","convert_class":[0,1,2,3,4,5,6,7,8,9],"keep_class":[0,1,2,3,4,5,6,7,8,9]},
+        {"dataset":"lsun_crop","convert_class":[-1],"keep_class":[-1]}
+    ],
+    "test_lsunr" : [
+        {"dataset":"cifar10","convert_class":[0,1,2,3,4,5,6,7,8,9],"keep_class":[0,1,2,3,4,5,6,7,8,9]},
+        {"dataset":"lsun_resize","convert_class":[-1],"keep_class":[-1]}
+    ],
+    "test_cifar100" : [
+        {"dataset":"cifar10","convert_class":[0,1,2,3,4,5,6,7,8,9],"keep_class":[0,1,2,3,4,5,6,7,8,9]},
+        {"dataset":"cifar100","convert_class":[-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1],"keep_class":[-1]}
+    ],
+     "test_svhn" : [
+        {"dataset":"cifar10","convert_class":[0,1,2,3,4,5,6,7,8,9],"keep_class":[0,1,2,3,4,5,6,7,8,9]},
+        {"dataset":"svhn","convert_class":[-1,-1,-1,-1,-1,-1,-1,-1,-1,-1],"keep_class":[-1]}
+    ]
+}

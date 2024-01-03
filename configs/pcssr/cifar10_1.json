@@ -1,0 +1,6 @@
+{
+    "inherit" : "./configs/pcssr.json",
+    "epoch_num"  : 200,
+    "milestones" : [120,190],
+    "backbone" : "wideresnet40-4"
+}
