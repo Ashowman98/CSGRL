@@ -10,7 +10,7 @@ class OSREvaluation():
         labels = test_loader.dataset.labels
         self.test_labels = np.array(labels,np.int)
         
-        self.close_samples = self.test_labels >= 0 #是否为已知类
+        self.close_samples = self.test_labels >= 0
         self.close_samples_ct = np.sum(self.close_samples)
     
     def close_accuracy(self,prediction):
@@ -30,7 +30,7 @@ class OSREvaluation():
         det_acc = .5 * (tpr + 1.-fpr).max()
 
         if thresh < -99999:
-            tidx = np.abs(np.array(tpr) - 0.95).argmin()#真阳概率>0.95的最小值
+            tidx = np.abs(np.array(tpr) - 0.95).argmin()
             thresh = thresholds[tidx]
         predicts = scores >= thresh
         ys = self.close_samples
@@ -91,7 +91,7 @@ class OSREvaluation():
 
         return OSCR
 
-    # score > thresh 表示是一个开放样本
+
     def open_reco_indexes(self,scores,thresh,rawpredicts):
         if np.isnan(scores).any() or np.isinf(scores).any():
             return {}
