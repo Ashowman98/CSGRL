@@ -106,7 +106,7 @@ class CifarOODDataset(Dataset):
         return self.ds[index]
 
 class PartialDataset(Dataset):
-    # 封装不同类型的数据集，训练时去掉未知类，对数据集类别重新编码，重写loader调用的返回值
+
     def __init__(self,knwon_ds,lab_keep = None,lab_cvt = None) -> None:
         super().__init__()
         self.known_ds = knwon_ds
@@ -128,7 +128,7 @@ class PartialDataset(Dataset):
         return inp,self.labrefl[lb],index
 
 class UnionDataset(Dataset):
-    #封装多个数据集，从多个数据集中找到返回值
+    
     def __init__(self,ds_list) -> None:
         super().__init__()
         self.dslist = ds_list
@@ -142,11 +142,11 @@ class UnionDataset(Dataset):
     
     def __getitem__(self, index: int):
         orgindex = index
-        for ds in self.dslist:  # 遍历每个数据集，找到index
+        for ds in self.dslist:  
             if index < len(ds):
                 a,b,c = ds[index]
                 return a,b,orgindex
-            index -= len(ds)  # 不是当前数据集，减去当前样本数
+            index -= len(ds)
         return None
 
 
@@ -183,7 +183,7 @@ def get_cifar10(settype,ds_name):
         ds = torchvision.datasets.CIFAR10(root=DATA_PATH, train=True, download=True, transform=trans)
         # ds.labels = ds.train_labels
         # img, lab = ds[0]
-        # img.show() # testmode=True无法显示
+        # img.show()
     else:
         ds = torchvision.datasets.CIFAR10(root=DATA_PATH, train=False, download=True, transform=gen_cifar_transform(testmode=True))
         # ds.labels = ds.test_labels
@@ -255,7 +255,7 @@ cache_base_ds = {
 }
 
 def get_ds_with_name(settype,ds_name):
-    # 按照数据集名字实例化数据集类别，并读取数据集
+
     global cache_base_ds
     key = str(settype) + ds_name
     if key not in cache_base_ds.keys():
@@ -270,7 +270,6 @@ def get_partialds_with_name(settype,ds_name,label_cvt,label_keep):
 def get_combined_dataset(settype,setting_list):
     ds_list = []
     for setting in setting_list:
-        # 遍历所有用作训练/测试的数据集
         ds = get_partialds_with_name(settype,setting['dataset'],setting['convert_class'],setting['keep_class'])
         if ds.__len__() > 0:
             ds_list.append(ds)
@@ -284,7 +283,7 @@ def get_combined_dataloaders(args,settings):
     return torch.utils.data.DataLoader(train_labeled, batch_size=args.bs, shuffle=istrain_mode, num_workers=workers,pin_memory=True,drop_last = use_droplast) if train_labeled is not None else None,\
             torch.utils.data.DataLoader(test, batch_size=args.bs, shuffle=False, num_workers=test_workers,pin_memory=args.gpu != 'cpu') if test is not None else None
 
-ds_classnum_dict = {# 已知类的数量，OOD实验时需修改
+ds_classnum_dict = {
     'cifar10' : 6,
     'svhn' : 6,
     'tinyimagenet' : 20,
