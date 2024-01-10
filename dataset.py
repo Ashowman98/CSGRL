@@ -116,8 +116,8 @@ class PartialDataset(Dataset):
         if lab_keep is None:  # by default, keep positive labels
             lab_keep = [x for x in lab_cvt if x > -1]
         keep = {x for x in lab_keep}
-        self.sample_indexes = [i for i in range(len(knwon_ds)) if lab_cvt[labels[i]] in keep]#-1代表未知类，不保留-1
-        self.labels = [lab_cvt[labels[i]] for i in range(len(knwon_ds)) if lab_cvt[labels[i]] in keep]#已知类重新从0开始标记，保留-1
+        self.sample_indexes = [i for i in range(len(knwon_ds)) if lab_cvt[labels[i]] in keep]
+        self.labels = [lab_cvt[labels[i]] for i in range(len(knwon_ds)) if lab_cvt[labels[i]] in keep]
         self.labrefl = lab_cvt
 
     def __len__(self) -> int:
