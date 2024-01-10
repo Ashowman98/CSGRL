@@ -62,7 +62,6 @@ class MultiStepLrSchedule:
         self.lrdecays = lrdecays
         self.start_lr = start_lr
 
-    # step 表示epoch中已经输入过的样本数
     def get_lr(self,epoch,step,lr):
         lr = self.start_lr
         # if step == 0 : # update learning rate
@@ -163,7 +162,6 @@ class regmethod:
         return func
 
 def setup_seed(seed):
-    # 设置随机种子
     torch.manual_seed(seed)
     torch.cuda.manual_seed_all(seed)
     np.random.seed(seed)
