@@ -216,7 +216,7 @@ class BackboneAndClassifier(nn.Module):
         if feature_only:
             return x
         xcls_raw = self.cat_cls(x)
-        # x_com = self.reco(x)  # 共有识别
+        # x_com = self.reco(x)
         return x, xcls_raw
 
 
@@ -239,7 +239,7 @@ class CSGRLModel(nn.Module):
         x = self.backbone_cs(x, feature_only=reqfeature, isgen=isgen)
         if reqfeature:
             return x
-        x, xcls_raw = x  # 分别是主干输出、重构距离、潜在mainfold表示和识别器输出
+        x, xcls_raw = x
         return x, xcls_raw
 
 
@@ -261,7 +261,7 @@ class CSGRLCriterion(nn.Module):
             g = torch.softmax(g, dim=1)
         elif self.avg_order == 2:
             g = torch.softmax(x, dim=1)
-            g = self.avg_pool(g).view(x.size(0), -1)  # 像素平均
+            g = self.avg_pool(g).view(x.size(0), -1)
         if prob: return g
         if pred: return torch.argmax(g, dim=1)
         loss = -torch.sum(self.get_onehot_label(y, g.shape[1]) * torch.log(g), dim=1).mean()
@@ -365,7 +365,7 @@ class CSGRLMethod:
         self.modelG.apply(weights_init)
         self.modeloptG = torch.optim.SGD(self.modelG.parameters(), lr=self.lrG, weight_decay=5e-4)
 
-        self.wrap_ds = WrapDataset(train_set, self.config, inchan_num=3, )  # RGB三通道
+        self.wrap_ds = WrapDataset(train_set, self.config, inchan_num=3, )
         self.wrap_loader = data.DataLoader(self.wrap_ds,
                                            batch_size=self.config['batch_size'], shuffle=True, pin_memory=True,
                                            num_workers=6)
