@@ -13,7 +13,7 @@ IMAGENET_PATH = '../data/imagenet2012'
 OOD_PATH = '../data/oodds'
 ```
 
-To train models from scratch, sh run.sh
+To train models from scratch, `sh run.sh`
 
 ## 2. Present Results
 
