@@ -15,7 +15,7 @@ OOD_PATH = '../data/oodds'
 
 To train models from scratch, sh run.sh
 
-## 2. Evaluation
+## 2. Present Results
 
 script `collect_metrics.py` helps collect and present experimental results: `python collect_metrics.py`
 
