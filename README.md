@@ -19,3 +19,6 @@ To train models from scratch, `sh run.sh`
 
 script `collect_metrics.py` helps collect and present experimental results: `python collect_metrics.py`
 
+## 3.  Extend to Other Types of Data
+
+Modify `class Backbone` in `csgrl.py`
