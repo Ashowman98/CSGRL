@@ -1,4 +1,4 @@
 {
-    "inherit" : "./configs/pcssr.json",
+    "inherit" : "./configs/csgrl.json",
     "backbone" : "wideresnet40-4"
 }
