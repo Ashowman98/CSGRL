@@ -1,0 +1,5 @@
+{
+    "inherit" : "./configs/pcssr.json",
+    "warmup_epoch": 1,
+    "backbone" : "resnet18"
+}
