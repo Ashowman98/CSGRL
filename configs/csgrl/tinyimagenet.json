@@ -1,5 +1,5 @@
 {
-    "inherit" : "./configs/pcssr.json",
+    "inherit" : "./configs/csgrl.json",
     "epoch_num"  : 285,
     "milestones" : [150,225],
     "warmup_epoch": 1,
