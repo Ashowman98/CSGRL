@@ -149,10 +149,10 @@ if __name__ == "__main__":
     parser.add_argument('--gpu', type=str, required=False, default="0", help='GPU number')
     parser.add_argument('--ds', type=str, required=False, default="./exps/cifar10/ood_spl.json",
                         help='dataset setting, choose file from ./exps')
-    parser.add_argument('--config', type=str, required=False, default="./configs/pcssr/cifar10.json",
+    parser.add_argument('--config', type=str, required=False, default="./configs/csgrl/cifar10.json",
                         help='model configuration, choose from ./configs')
     parser.add_argument('--save', type=str, required=False, default="_m0", help='Saving folder name')
-    parser.add_argument('--method', type=str, required=False, default="cssr",
+    parser.add_argument('--method', type=str, required=False, default="csgrl",
                         help='Methods : ' + ",".join(util.method_list.keys()))
     parser.add_argument('--configupdate', type=str, required=False, default="",
                         help='Update several key values in config')
