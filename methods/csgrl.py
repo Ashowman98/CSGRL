@@ -175,7 +175,7 @@ class CSGRLClassifier(nn.Module):
         # self.avg_pool = nn.AdaptiveAvgPool2d((1, 1))
         self.useL1 = config['error_measure'] == 'L1'
 
-        self.reduction = -1 if config['model'] == 'pcssr' else 1
+        self.reduction = -1 if config['model'] == 'csgrl' else 1
         self.reduction *= config['gamma']
 
     def ae_error(self, rc, x):
@@ -205,7 +205,7 @@ class BackboneAndClassifier(nn.Module):
 
     def __init__(self, num_classes, config):
         super().__init__()
-        clsblock = {'linear': LinearClassifier, 'pcssr': CSGRLClassifier, 'rcssr': CSGRLClassifier}
+        clsblock = {'csgrl': CSGRLClassifier}
         self.backbone = Backbone(config, 3)
         cat_config = config['category_model']
         self.cat_cls = clsblock[cat_config['model']](self.backbone.output_dim, num_classes, cat_config)
