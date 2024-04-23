@@ -28,9 +28,9 @@ no_test_transform = False
 
 DATA_PATH = '../data'
 TINYIMAGENET_PATH = DATA_PATH + '/tiny-imagenet-200/'
+OOD_PATH = '../data/oodds'
 LARGE_OOD_PATH = '../data/largeoodds'
 IMAGENET_PATH = '../data/imagenet2012'
-OOD_PATH = '../data/oodds'
 
 
 class tinyimagenet_data(Dataset):
