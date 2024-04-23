@@ -4,7 +4,7 @@ Official PyTorch implementation
 
 ## 1. Train
 
-Before training, please setup dataset directories in `dataset.py`:
+Before training, please setup dataset directories in `dataset.py` or `dataset_ood.py`:
 ```
 DATA_PATH = '../data'                                   # path for cifar10, svhn
 TINYIMAGENET_PATH = DATA_PATH + '/tiny-imagenet-200/'   # path for tinyimagenet 
