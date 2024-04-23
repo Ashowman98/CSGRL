@@ -6,11 +6,9 @@ Official PyTorch implementation
 
 Before training, please setup dataset directories in `dataset.py`:
 ```
-DATA_PATH = '../data'
-TINYIMAGENET_PATH = DATA_PATH + '/tiny-imagenet-200/'
-LARGE_OOD_PATH = '../data/largeoodds'
-IMAGENET_PATH = '../data/imagenet2012'
-OOD_PATH = '../data/oodds'
+DATA_PATH = '../data'                                   # path for cifar10, svhn
+TINYIMAGENET_PATH = DATA_PATH + '/tiny-imagenet-200/'   # path for tinyimagenet 
+OOD_PATH = '../data/oodds'                              # path for ood datasets
 ```
 
 To train models from scratch, `sh run.sh`
