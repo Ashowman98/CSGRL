@@ -2,8 +2,7 @@ import json
 
 import numpy as np
 
-margin = [-10, -5, -3, -1, 1, 3, 5, 10]
-margin = [-10, -5, -1, 1, 5, 10]
+# margin = [5, 10, 15]
 margin = [5]
 datasets = ['cifar10']
 splits = ['cifar100','svhn']
