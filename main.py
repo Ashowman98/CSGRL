@@ -118,10 +118,10 @@ if __name__ == "__main__":
     # torch.backends.cudnn.benchmark = True
 
     parser = argparse.ArgumentParser()
-    parser.add_argument('--gpu', type=str, required=False,default="1", help='GPU number')
-    parser.add_argument('--ds', type=str, required=False,default="./exps/svhn/spl_a.json", help='dataset setting, choose file from ./exps')
-    parser.add_argument('--config', type=str, required=False,default="./configs/csgrl/svhn.json", help='model configuration, choose from ./configs')
-    parser.add_argument('--save', type=str, required=False,default="imagenet1k/inaturalist", help='Saving folder name')
+    parser.add_argument('--gpu', type=str, required=False, help='GPU number')
+    parser.add_argument('--ds', type=str, required=False, help='dataset setting, choose file from ./exps')
+    parser.add_argument('--config', type=str, required=False, help='model configuration, choose from ./configs')
+    parser.add_argument('--save', type=str, required=False, help='Saving folder name')
     parser.add_argument('--method', type=str, required=False,default="csgrl", help='Methods : ' + ",".join(util.method_list.keys()))
     parser.add_argument('--configupdate', type=str, required=False,default="", help='Update several key values in config')
     parser.add_argument('--test_interval', type=int, required=False,default=1, help='The frequency of model evaluation')
