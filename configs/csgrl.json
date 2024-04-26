@@ -3,7 +3,7 @@
     "projection_dim" : -1,
     
     "category_model" : {
-        "model" : "pcssr",
+        "model" : "csgrl",
         "ae_hidden" : [],
         "ae_latent" : 64,
         "projection_dim" : -1,
