@@ -151,7 +151,7 @@ if __name__ == "__main__":
                         help='dataset setting, choose file from ./exps')
     parser.add_argument('--config', type=str, required=False, default="./configs/csgrl/cifar10.json",
                         help='model configuration, choose from ./configs')
-    parser.add_argument('--save', type=str, required=False, default="_m0", help='Saving folder name')
+    parser.add_argument('--save', type=str, required=False, default="_m5", help='Saving folder name')
     parser.add_argument('--method', type=str, required=False, default="csgrl",
                         help='Methods : ' + ",".join(util.method_list.keys()))
     parser.add_argument('--configupdate', type=str, required=False, default="",
