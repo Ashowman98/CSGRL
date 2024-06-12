@@ -34,8 +34,6 @@ def get_metric(file,metric,is_last = True):
     else:
         res = 0
         for epoch in hist:
-            if epoch['epoch'] >= 285:
-                break
             for m in metric.split('.'):
                 if not m in epoch:
                     epoch = -1
