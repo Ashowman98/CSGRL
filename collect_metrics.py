@@ -71,5 +71,5 @@ def generate_tables(use_last = True, use_best = False):
 
 
 
-# generate_tables(True, True)
+generate_tables(True, True)
 generate_tables(False, True)
