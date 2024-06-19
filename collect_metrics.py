@@ -12,12 +12,6 @@ s_w = list(map(lambda x: '%.02f' % x, s_w))
 s_w_num=len(s_w)
 
 metric_name = 'open_detection.auroc'
-# metric_name = 'open_reco.macro_f1'
-# metric_name = 'close acc'
-# metric_name = 'open_reco.oscr'
-# metric_name = 'open_detection.bestdetacc'
-# metric_name = 'open_detection.auprIN'
-# metric_name = 'open_detection.auprOUT'
 
 def get_metric(file,metric,is_last = True):
     with open(file,'r') as f:
